@@ -5,6 +5,7 @@
 ![My Wireframe](wireframe.jpg)
 
 ## PSEUDOCODE
+*BRONZE plan unless otherwise stated*
 - When the page loads everything appears. Scores are 0.
 - After a 0.5s delay a pop-up covering the main square asks if Player 1 wants 
   to play against Player 2 or the Computer.
