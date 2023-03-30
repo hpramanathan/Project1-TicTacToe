@@ -5,7 +5,11 @@
 ![My Wireframe](wireframe.jpg)
 
 ## PSEUDOCODE
+<<<<<<< HEAD
 *BRONZE (MVP) plan unless otherwise stated*
+=======
+*BRONZE plan unless otherwise stated*
+>>>>>>> 8636ca64051848a9e6620fc8c7b560711a0364ac
 - When the page loads everything appears. Scores are 0.
 - After a 0.5s delay a pop-up appears. with covering the main square asks if Player 1 wants 
   to play against Player 2 or the Computer.
