@@ -1,9 +1,14 @@
 # Project1-TicTacToe
 
-# H1 PSEUDOCODE
-- When the page loads everything appears.
-- After a 0.5s delay a pop-up laid over the main square asks if Player 1 wants 
+## WIREFRAME
+
+![My Wireframe](wireframe.jpg)
+
+## PSEUDOCODE
+- When the page loads everything appears. Scores are 0.
+- After a 0.5s delay a pop-up covering the main square asks if Player 1 wants 
   to play against Player 2 or the Computer.
-- If Player 1 chooses Player 2 then the pop-up goes away and Player 1 has the 
-  first go.
+- If Player 1 chooses Player 2 then the pop-up goes away and the page shows Player 2 
+  on the right hand side.
+- GOLD: Coin toss.
 - They each take turns either until someone wins or there's no winner.

@@ -1,1 +1,1 @@
-console.js("Om Tat Sat")
+console.log("Om Tat Sat")
