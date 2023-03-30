@@ -1,6 +1,6 @@
 # Project1-TicTacToe
 
-PSEUDOCODE
+# H1 PSEUDOCODE
 - When the page loads everything appears.
 - After a 0.5s delay a pop-up laid over the main square asks if Player 1 wants 
   to play against Player 2 or the Computer.
