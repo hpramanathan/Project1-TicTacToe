@@ -1,8 +1,43 @@
 body {
+    min-height: 98vh;
+    margin: 0 auto;
+    /* max-width: 56em; */
+    padding: 1em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: lightpink;
     font-family: 'Gajraj One', cursive;
     font-size: 16px;
     text-align: center;
+}
+
+/* grid {
+    display: flex;
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 1em;
+} */
+
+header,
+main,
+footer {
+    background: hotpink;
+    /* padding: 1em; */
+}
+
+header, footer {
+    width: 98%;
+    height: 100px;
+    text-align: center;
+    line-height: 30px;
+
+}
+
+.grid > * {
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
