@@ -9,6 +9,7 @@ const playerOneSymbol = "X";
 const playerTwoSymbol = "O";
 console.log(cells[0])
 
+let eachGamePlayersChoices = []
 
 // We also need to create a variable of all the winning combinations by index number of our playing grid
 const winningCombos = [
@@ -27,15 +28,25 @@ let isPlayerOneTurn = true
 // A function that adds event listeners to each game cell when it's clicked
 function handleCellClick(event) {
     console.log(isPlayerOneTurn == true)
-    if (isPlayerOneTurn === true) {
+    if (isPlayerOneTurn) {
         event.target.innerHTML = playerOneSymbol
+        eachGamePlayersChoices.push(parseInt(event.target.dataset.cellIndex))
+        console.log(eachGamePlayersChoices)
         isPlayerOneTurn = false
     } else  {
     event.target.innerHTML = playerTwoSymbol
     isPlayerOneTurn = true
     }
+    // isPlayerOneTurn = !isPlayerOneTurn                           // Instead of line 32 and 35.
+    event.target.removeEventListener("click", handleCellClick)
 }
 
 cells.forEach(function(cell) {
     cell.addEventListener("click", handleCellClick)
 });
+
+function checkForWinOrTie() {
+
+}
+
+// Tell me the indexes that a player has clicked on
