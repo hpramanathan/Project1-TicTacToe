@@ -44,6 +44,9 @@ function removeCellEventListeners() {
     });
 }
 
+/* During gamelay, if three of the symbols are in a particular combination then a winner can be declared.
+If the positions of one player's symbols match any of the winning combinations, a winner can be declared. */
+
 // This function checks whether a player has won or if there is a tie.
 function checkForWinOrTie(playerChoices) {
     const winner = winningCombos.some((winningCombo) => {
@@ -54,9 +57,7 @@ function checkForWinOrTie(playerChoices) {
     return winner
 }
 
-/* I need a function that adds event listeners to each game cell when it's clicked.
-During gamelay, if three of the symbols are in a particular combination then a winner can be declared.
-If the positions of one player's symbols match any of the winning combinations, a winner can be declared. */
+/* I need a function that adds event listeners to each game cell when it's clicked. */
 
 // This function handles what happens each time there's a click event on a game cell.
 function handleCellClick(event) {
@@ -96,7 +97,7 @@ function handleCellClick(event) {
         // console.log(gameEndStatus)
     }
 
-    // isPlayerOneTurn = !isPlayerOneTurn                           // Instead of line 32 and 35.
+    // isPlayerOneTurn = !isPlayerOneTurn                           // Instead of line 32 and 35 <= NEED TO UPDATE.
     event.target.removeEventListener("click", handleCellClick)
 }
 
@@ -121,4 +122,3 @@ function resetGame() {
 
 // This adds an event listener to the Restart Game button when it's clicked and calls the resetGame function just above
 resetButton.addEventListener("click", resetGame)
-
