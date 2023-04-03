@@ -43,4 +43,4 @@
 - Otherwise once all the squares have been filled in, a tie will be declared.
 - When you press the Restart Game button the game resets and you can play again. 
 
-![Code Snippet 1](Snippet.jpg)
+![Code Snippet 1](Snippet.png)
