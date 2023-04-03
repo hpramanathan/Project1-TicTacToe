@@ -1,11 +1,12 @@
+// We create a reference variable to the reset button and game status text element
 let resetButton = document.getElementById("restartButton")
-
+let statusText = document.getElementById("statusText")
 
 let cells = document.querySelectorAll(".cell");
 // console.log(cells)
 
 // First we create a variable that will store our game status information
-const gameStatus = document.querySelector(".status");
+// const gameStatus = document.querySelector(".status");
 
 // Then we create 2 variables to represent the two players 
 const playerOneSymbol = "X";
@@ -50,32 +51,39 @@ function checkForWinOrTie(playerChoices) {
     return winner
 }
 
-// A function that adds event listeners to each game cell when it's clicked
+// A function that adds event listeners to each game cell when it's clicked.
+// During gamelay, if three of the symbols are in a particular combination then a winner can be declared.
+// If the positions of one player's symbols match any of the winning combinations, a winner can be declared.
 function handleCellClick(event) {
     // console.log(isPlayerOneTurn == true)
     let gameEndStatus
     if (isPlayerOneTurn) {
         event.target.innerHTML = playerOneSymbol
+        statusText.innerHTML = "It's Player 2's Turn"
         playerOneChoices.push(parseInt(event.target.dataset.cellIndex))
         let isWinner = checkForWinOrTie(playerOneChoices)
         if (isWinner) {
             gameEndStatus = "Player 1 Wins"
+            statusText.innerHTML = "PLAYER 1 WON"
         }
         // console.log(playerOneChoices)
         isPlayerOneTurn = false
     } else  {
     event.target.innerHTML = playerTwoSymbol
+    statusText.innerHTML = "It's Player 1's Turn"
     playerTwoChoices.push(parseInt(event.target.dataset.cellIndex))
     let isWinner = checkForWinOrTie(playerTwoChoices)
     if (isWinner) {
         gameEndStatus = "Player 2 Wins"
+        statusText.innerHTML = "PLAYER 2 WON"
     }
     isPlayerOneTurn = true
     // console.log(playerTwoChoices)
     }
     let numberOfBoxesClicked = playerOneChoices.length + playerTwoChoices.length
     if (!gameEndStatus && numberOfBoxesClicked === 9) {
-        console.log("Tie")
+        statusText.innerHTML = "IT'S A TIE"
+        // console.log("Tie")
     }
 
     if (gameEndStatus) {
@@ -83,23 +91,28 @@ function handleCellClick(event) {
         console.log(gameEndStatus)
     }
 
-
     // isPlayerOneTurn = !isPlayerOneTurn                           // Instead of line 32 and 35.
     event.target.removeEventListener("click", handleCellClick)
 }
 
 function resetGame() {
-//! The cells innerHTML needs to empty
-cells.forEach((cell) => {cell.innerHTML = ""})
 
-//! Need to add all the event listeners again
-addCellEventListeners()
-//! Reset the PlayerXChoices arrays, set back to empty
-playerOneChoices = []
-playerTwoChoices = []
+    // Empty Game Status Text
+    statusText.innerHTML = "New Game, let's go! It's Player 1's Turn."
+
+    //! The cells innerHTML needs to be emptied
+    cells.forEach((cell) => {cell.innerHTML = ""})
+
+    //! Need to add all the event listeners again
+    addCellEventListeners()
+
+    //! Reset the PlayerXChoices arrays, set back to empty
+    playerOneChoices = []
+    playerTwoChoices = []
+
+    // Setting the first player upon reset to Player 1
+    isPlayerOneTurn = true
 }
-resetButton.addEventListener("click", resetGame)
 
-// During gamelay, if three of the symbols are in a particular combination then a winner can be declared.
-// If the positions of one player's symbols match any of the winning combinations, a winner can be declared.
+resetButton.addEventListener("click", resetGame)
 

@@ -1,111 +1,121 @@
+/* Set some basic styles for the body element of the page */
 body {
-    min-height: 100vh;
-    margin: 0 auto;
-    /* padding: 1em 1em; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: lightcyan;
-    font-family: 'Gajraj One', cursive;
-    font-size: 16px;
-    text-align: center;
-}
-
-header, footer {
+    min-height: 100vh; /* Sets the height to 100% of the viewport */
+    margin: 0 auto; /* Centers the content horizontally using auto margins */
+    display: flex; /* Sets the flex display */
+    flex-direction: column; /* to column layout  */
+    justify-content: space-between; /* and align items to center vertically */
+    background: lightcyan; /* Sets the background color */
+    font-family: 'Gajraj One', cursive; /* Sets the font family to Gajraj One */
+    font-size: 16px; /* Sets the default font size */
+    text-align: center; /* Sets the text alignment to center */
+  }
+  
+  /* Style the header and footer */
+header {
     width: 100%;
     height: 100px;
     background: lightcyan;
     text-align: center;
     line-height: 35px;
     border-radius: 10px;
-}
-
-header {
     margin: 20px 0px 0px 0px;
-}
-
-main {
+  }
+  
+  /* Style the main content area */
+  main {
     flex-grow: 1;
     display: flex;
     justify-content: space-around;
-}
-
-nav, section, aside {
+  }
+  
+  /* Style the navigation, section, and aside elements */
+  nav,
+  section,
+  aside {
     width: 100%;
     flex-basis: 25%;
-    background: WHITE;
+    background: lightcyan;
     border-radius: 10px;
     text-align: center;
     line-height: 100px;
   }
-
-nav {
+  
+  /* Style the navigation */
+  nav {
     margin: 20px 10px 20px 20px;
-}
-
-section {
-    flex-grow: 1;
-    margin: 20px 10px 20px 10px;
-}
-
-aside {
-    margin: 20px 20px 20px 10px;
-}
-
-footer {
-    height: 50px;
-    margin: 0px 0px 20px 0px;
-}
-
-.game-container {
-    display: grid;
-    grid-template-columns:  repeat(3, auto);
-    width: 306px;
-    margin: 50px auto;
-    /* position: fixed; */
-    /* top: 50%;
-    left: 50%;
-    margin-top: -150px;
-    margin-left: -150px;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    gap: 12px; */
-    background-color: black;
   }
   
-.cell {
+  /* Style the section */
+  section {
+    flex-grow: 1;
+    margin: 20px 10px 20px 10px;
+  }
+  
+  /* Style the aside */
+  aside {
+    margin: 20px 20px 20px 10px;
+  }
+  
+  /* Set the font size for the nav and aside elements */
+  nav, aside {
+    font-size: 3em;
+  }
+  
+  /* Style the game board */
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 306px;
+    margin: 50px 0px -10px 90px;
+    background-color: lightcyan;
+    /* Remove the outer border of the game board */
+    border: none;
+  }
+  
+  /* Style the cells in the game board */
+  .cell {
     font-family: Arial, Helvetica, sans-serif, cursive;
-    color: white;
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 0 1px white;
-    /* border: 1px solid white; */
     cursor: pointer;
     line-height: 100px;
     font-size: 60px;
-    /* background-color:black;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 50px;
-    text-align: center; */
+    /* Add a border to the cells */
+    border: 10px solid rgba(0, 0, 0);
   }
-
-
-h1 {
-    margin: 15px 0px 5px 0px;
-}
-
-.emphasis {
-    font-size: 1.2em;
+  
+  /* Style the heading */
+  h1 {
+    margin: 15px 0px 15px 0px;
+    font-size: 5em;
+  }
+  
+  /* Style the emphasis text */
+  .emphasis {
+    font-size: 1.5em;
     font-style: italic;
     margin: 0px;
-}
-
-@media screen and (max-width: 600px){
+  }
+  
+  /* Style the fixed game status heading */
+  .status {
+    margin: 40px auto -60px auto;
+    font-size: 2em;
+  }
+  
+  /* Style the transient game status message */
+  #statusText {
+    margin: 10px auto -40px auto;
+    font-size: 1.2em;
+    color: magenta;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 600px) {
     main {
       flex-direction: column;
     }
-    
     section {
       order: 1;
     }

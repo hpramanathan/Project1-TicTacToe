@@ -1,46 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe by Hari R</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<!DOCTYPE html> <!-- specifies the document type, ie HTML5 -->
+<html lang="en"> <!-- Language set to English -->
+<head> <!-- A container of the document's metadata and external links populating/formatting the code below -->
+    <meta charset="UTF-8"> <!-- This specifies the character encoding for the document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Tic Tac Toe by Hari R</title> <!-- sets the document title in the browser -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Sets up a link to Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap" rel="stylesheet"> <!-- This loads the Gajraj One font from Google Fonts -->
+        <link rel="stylesheet" href="style.css"> <!-- This links my external stylesheet -->
+        <script defer src="script.js"></script> <!-- This links the external JavaScript file with deferred loading -->
 </head>
-<body>
-    
-    <header>
-        <h1>TIC TAC TOE</h1>
-        <p class="emphasis">gimme a high, gimme a low, gimme a three in a row</p>
-    </header>
-    <main>
-        <nav>PLAYER 1</nav>
-        <section>
-            <div class="game-container">
-                <div class="cell" data-cell-index="0"></div>
-                <div class="cell" data-cell-index="1"></div>
-                <div class="cell" data-cell-index="2"></div>
-                <div class="cell" data-cell-index="3"></div>
-                <div class="cell" data-cell-index="4"></div>
-                <div class="cell" data-cell-index="5"></div>
-                <div class="cell" data-cell-index="6"></div>
-                <div class="cell" data-cell-index="7"></div>
-                <div class="cell" data-cell-index="8"></div>
-              </div>
-              <h2 class="status">GAME STATUS</h2>
-              <p></p>
-              <button id="restartButton">Reset Game</button>
-            </div>
-        </section>
-        <aside>PLAYER 2</aside>
-    </main>
-    <footer>
-        Footer
-    </footer>
 
-</body>
-</html>
+<body> <!-- This contains the visible content of the document -->
+    
+    <header> <!-- This contains the header section of the document -->
+        <h1>TIC TAC TOE</h1> <!-- This displays the document title which is the name of the game -->
+        <p class="emphasis">
+            gimme a high, gimme a low, gimme a three in a row
+        </p> <!-- This displays a subtitle with emphasis. It's a nursery rhyme related to the game. -->
+    </header>
+    <main> <!-- This element contains the main content of the document -->
+        <nav> <!-- Within main, this element contains information about Player 1 (eg: what symbol they'll be playing with.) -->
+            PLAYER 1 </br> X <!-- Displays the player 1 symbol -->
+        </nav>
+        <section> <!-- Contains the playing board section of the document -->
+            <div class="game-container"> <!-- contains the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="0"></div> <!-- contains the first cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="1"></div> <!-- contains the second cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="2"></div> <!-- contains the third cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="3"></div> <!-- contains the fourth cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="4"></div> <!-- contains the fifth cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="5"></div> <!-- contains the sixth cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="6"></div> <!-- contains the seventh cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="7"></div> <!-- contains the eighth cell of the tic-tac-toe grid -->
+                <div class="cell" data-cell-index="8"></div> <!-- contains the ninth cell of the tic-tac-toe grid -->
+              </div>
+              <h2 class="status">GAME STATUS</h2> <!-- Displays the game status title -->
+              <p id="statusText">New Game, let's go! It's Player 1's Turn.</p> <!-- Displays the game status text which changes as the game goes along -->
+              <button id="restartButton">RESTART GAME</button>  <!-- A restart button to reset the game -->
+
+            </div>  <!-- End of game-container div -->
+            
+        </section>  <!-- End of section element -->
+            
+        <aside>  <!-- Aside element for Player 2 information -->
+            PLAYER 2  <!-- Label for Player 2 -->
+            </br>  <!-- Line break -->
+            O  <!-- Symbol for Player 2 -->
+        </aside>  <!-- End of aside element -->
+        
+    </main>  <!-- End of main element -->      
+</body>  <!-- End of body element -->
+</html>  <!-- End of HTML document -->
+            
