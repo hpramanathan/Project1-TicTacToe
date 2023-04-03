@@ -67,7 +67,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 306px;
-    margin: 50px 0px -10px 90px;
+    margin: 50px auto -10px auto;
     background-color: lightcyan;
     /* Remove the outer border of the game board */
     border: none;
