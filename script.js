@@ -29,6 +29,7 @@ const winningCombos = [
 	[2, 4, 6]
 ];
 
+// This function adds event listeners to each game cell when it's clicked.
 function addCellEventListeners() {
     cells.forEach(function(cell) {
         cell.addEventListener("click", handleCellClick)
@@ -36,12 +37,14 @@ function addCellEventListeners() {
 }
 addCellEventListeners()
 
+// This function removes the event listeners from the cells once they've been clicked.
 function removeCellEventListeners() {
     cells.forEach(function(cell) {
         cell.removeEventListener("click", handleCellClick)
     });
 }
 
+// This function checks whether a player has won or if there is a tie.
 function checkForWinOrTie(playerChoices) {
     const winner = winningCombos.some((winningCombo) => {
         return winningCombo.every((number) => {
@@ -51,9 +54,11 @@ function checkForWinOrTie(playerChoices) {
     return winner
 }
 
-// A function that adds event listeners to each game cell when it's clicked.
-// During gamelay, if three of the symbols are in a particular combination then a winner can be declared.
-// If the positions of one player's symbols match any of the winning combinations, a winner can be declared.
+/* I need a function that adds event listeners to each game cell when it's clicked.
+During gamelay, if three of the symbols are in a particular combination then a winner can be declared.
+If the positions of one player's symbols match any of the winning combinations, a winner can be declared. */
+
+// This function handles what happens each time there's a click event on a game cell.
 function handleCellClick(event) {
     // console.log(isPlayerOneTurn == true)
     let gameEndStatus
@@ -95,24 +100,25 @@ function handleCellClick(event) {
     event.target.removeEventListener("click", handleCellClick)
 }
 
+// This function resets the game to its initial state.
 function resetGame() {
-
-    // Empty Game Status Text
+    // New Game Status Text
     statusText.innerHTML = "New Game, let's go! It's Player 1's Turn."
 
-    //! The cells innerHTML needs to be emptied
+    // The cells innerHTML needs to be emptied of its X's and O's
     cells.forEach((cell) => {cell.innerHTML = ""})
 
-    //! Need to add all the event listeners again
+    // This adds all the event listeners back again so they can be clicked and their choices stored with the function above
     addCellEventListeners()
 
-    //! Reset the PlayerXChoices arrays, set back to empty
+    // This resets the PlayerXChoices arrays, back to empty
     playerOneChoices = []
     playerTwoChoices = []
 
-    // Setting the first player upon reset to Player 1
+    // This sets the first player upon reset to Player 1
     isPlayerOneTurn = true
 }
 
+// This adds an event listener to the Restart Game button when it's clicked and calls the resetGame function just above
 resetButton.addEventListener("click", resetGame)
 
