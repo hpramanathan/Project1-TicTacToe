@@ -93,7 +93,7 @@ function handleCellClick(event) {
 
     if (gameEndStatus) {
         removeCellEventListeners()
-        console.log(gameEndStatus)
+        // console.log(gameEndStatus)
     }
 
     // isPlayerOneTurn = !isPlayerOneTurn                           // Instead of line 32 and 35.

@@ -44,3 +44,9 @@
 - When you press the Restart Game button the game resets and you can play again. 
 
 ![Code Snippet 1](Snippet1.png)
+
+- This snippet of code is the main engine of the game.
+- Each time a player clicks on a square it adds their relevant symbol (X or O).
+- It tells you whose turn it is next.
+- It converts the symbol string for each player into an integer referencing the index of the relevant square on the grid.
+- This then allows the function to determine if either player is a winner (the function for determining this isn't included in this snippet of code.)
